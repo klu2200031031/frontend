@@ -19,7 +19,7 @@ function ArtisanProfile() {
 
   const fetchProfile = async () => {
     try {
-      const response = await fetch("http://localhost:2030/api/artisan-profile");
+      const response = await fetch("https://backend-production-720a.up.railway.app/api/artisan-profile");
       if (!response.ok) {
         throw new Error("Failed to fetch profile");
       }
@@ -42,7 +42,7 @@ function ArtisanProfile() {
     const method = isEditing ? "PUT" : "POST";
 
     try {
-      const response = await fetch("http://localhost:2030/api/artisan-profile", {
+      const response = await fetch("https://backend-production-720a.up.railway.app/api/artisan-profile", {
         method: method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(profile),

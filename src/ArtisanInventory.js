@@ -11,7 +11,7 @@ function ArtisanInventory() {
   }, []);
 
   const fetchInventory = async () => {
-    const response = await fetch("http://localhost:2030/api/inventory");
+    const response = await fetch("https://backend-production-720a.up.railway.app/api/inventory");
     const data = await response.json();
     setInventory(data);
   };
@@ -22,7 +22,7 @@ function ArtisanInventory() {
   };
 
   const addInventory = async () => {
-    await fetch("http://localhost:2030/api/inventory", {
+    await fetch("https://backend-production-720a.up.railway.app/api/inventory", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newInventory),
@@ -33,7 +33,7 @@ function ArtisanInventory() {
 
   const updateInventory = async () => {
     if (editId !== null) {
-      await fetch(`http://localhost:2030/api/inventory/${editId}`, {
+      await fetch(`https://backend-production-720a.up.railway.app/api/inventory/${editId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newInventory),
@@ -45,7 +45,7 @@ function ArtisanInventory() {
   };
 
   const deleteInventory = async (id) => {
-    await fetch(`http://localhost:2030/api/inventory/${id}`, {
+    await fetch(`https://backend-production-720a.up.railway.app/api/inventory/${id}`, {
       method: "DELETE",
     });
     fetchInventory();

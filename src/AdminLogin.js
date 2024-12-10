@@ -11,7 +11,7 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2030/api/admin/login', {
+      const response = await axios.post('https://backend-production-720a.up.railway.app/api/admin/login', {
         username,
         password,
       });

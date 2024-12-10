@@ -13,7 +13,7 @@ function AdminProducts() {
   });
 
   useEffect(() => {
-    fetch('http://localhost:2030/api/products') // Corrected endpoint
+    fetch('https://backend-production-720a.up.railway.app/api/products') // Corrected endpoint
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch products');
@@ -32,7 +32,7 @@ function AdminProducts() {
 
   // Handle Delete Product
   const handleDelete = (id) => {
-    fetch(`http://localhost:2030/api/products/${id}`, {
+    fetch(`https://backend-production-720a.up.railway.app/api/products/${id}`, {
       method: 'DELETE',
     })
       .then((response) => response.text())
@@ -69,7 +69,7 @@ function AdminProducts() {
 
     const updatedData = { ...updatedProduct, id: editingProduct.id };
 
-    fetch(`http://localhost:2030/api/products/${editingProduct.id}`, {
+    fetch(`https://backend-production-720a.up.railway.app/api/products/${editingProduct.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

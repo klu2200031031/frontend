@@ -6,7 +6,7 @@ function AdminInventory() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:2030/api/inventory') // Adjust the API endpoint as needed
+    fetch('https://backend-production-720a.up.railway.app/api/inventory') // Adjust the API endpoint as needed
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch inventory');

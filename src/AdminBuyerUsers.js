@@ -14,7 +14,7 @@ function AdminBuyerUsers() {
 
   useEffect(() => {
     // Fetch buyers from the backend
-    fetch('http://localhost:2030/api/buyer/all') // Update with your backend endpoint
+    fetch('https://backend-production-720a.up.railway.app/api/buyer/all') // Update with your backend endpoint
       .then((response) => response.json())
       .then((data) => setBuyers(data))
       .catch((error) => console.error('Error fetching buyers:', error));
@@ -22,7 +22,7 @@ function AdminBuyerUsers() {
 
   // Handle Delete Buyer
   const handleDelete = (id) => {
-    fetch(`http://localhost:2030/api/buyer/delete/${id}`, {
+    fetch(`https://backend-production-720a.up.railway.app/api/buyer/delete/${id}`, {
       method: 'DELETE',
     })
       .then((response) => response.text())
@@ -60,7 +60,7 @@ function AdminBuyerUsers() {
 
     const updatedData = { ...updatedBuyer, id: editingBuyer.id };
 
-    fetch(`http://localhost:2030/api/buyer/update/${editingBuyer.id}`, {
+    fetch(`https://backend-production-720a.up.railway.app/api/buyer/update/${editingBuyer.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

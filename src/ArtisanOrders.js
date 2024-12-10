@@ -15,7 +15,7 @@ function ArtisanOrders() {
   // Function to fetch orders from the backend
   const fetchOrders = async () => {
     try {
-      const response = await fetch("http://localhost:2030/api/orders");
+      const response = await fetch("https://backend-production-720a.up.railway.app/api/orders");
       if (!response.ok) {
         throw new Error("Failed to fetch orders");
       }

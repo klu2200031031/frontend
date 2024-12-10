@@ -11,13 +11,13 @@ function ArtisanProducts() {
   }, []);
 
   const fetchProducts = async () => {
-    const response = await fetch('http://localhost:2030/api/products');
+    const response = await fetch('https://backend-production-720a.up.railway.app/api/products');
     const data = await response.json();
     setProducts(data);
   };
 
   const handleAddProduct = async () => {
-    const response = await fetch('http://localhost:2030/api/products', {
+    const response = await fetch('https://backend-production-720a.up.railway.app/api/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newProduct),
@@ -29,7 +29,7 @@ function ArtisanProducts() {
   };
 
   const handleDeleteProduct = async (id) => {
-    await fetch(`http://localhost:2030/api/products/${id}`, { method: 'DELETE' });
+    await fetch(`https://backend-production-720a.up.railway.app/api/products/${id}`, { method: 'DELETE' });
     fetchProducts();
   };
 
@@ -39,7 +39,7 @@ function ArtisanProducts() {
 
   const handleUpdateProduct = async () => {
     if (editingProduct) {
-      const response = await fetch(`http://localhost:2030/api/products/${editingProduct.id}`, {
+      const response = await fetch(`https://backend-production-720a.up.railway.app/api/products/${editingProduct.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editingProduct),

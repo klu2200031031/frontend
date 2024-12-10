@@ -57,7 +57,7 @@ function ArtisanLoginSignup() {
 
     try {
       if (isLogin) {
-        const response = await axios.post('http://localhost:2030/api/artisan/login', {
+        const response = await axios.post('https://backend-production-720a.up.railway.app/api/artisan/login', {
           email: formData.email,
           password: formData.password,
         });
@@ -69,7 +69,7 @@ function ArtisanLoginSignup() {
           navigate('/artisan-home');
         }
       } else {
-        const response = await axios.post('http://localhost:2030/api/artisan/register', formData);
+        const response = await axios.post('https://backend-production-720a.up.railway.app/api/artisan/register', formData);
         setPopupMessage(response.data);
       }
     } catch (error) {

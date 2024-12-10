@@ -64,7 +64,7 @@ function BuyerLoginSignup() {
 
     try {
       if (isLogin) {
-        const response = await axios.post('http://localhost:2030/api/buyer/login', {
+        const response = await axios.post('https://backend-production-720a.up.railway.app/api/buyer/login', {
           email: formData.email,
           password: formData.password,
         });
@@ -76,7 +76,7 @@ function BuyerLoginSignup() {
           navigate('/buyer-home');
         }
       } else {
-        const response = await axios.post('http://localhost:2030/api/buyer/register', formData);
+        const response = await axios.post('https://backend-production-720a.up.railway.app/api/buyer/register', formData);
         setPopupMessage(response.data);
       }
     } catch (error) {

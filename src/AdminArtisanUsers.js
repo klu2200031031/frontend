@@ -13,7 +13,7 @@ function AdminArtisanUsers() {
 
   useEffect(() => {
     // Fetch artisans from the backend
-    fetch('http://localhost:2030/api/artisan/all')
+    fetch('https://backend-production-720a.up.railway.app/api/artisan/all')
       .then((response) => response.json())
       .then((data) => setArtisans(data))
       .catch((error) => console.error('Error fetching artisans:', error));
@@ -21,7 +21,7 @@ function AdminArtisanUsers() {
 
   // Handle Delete Artisan
   const handleDelete = (id) => {
-    fetch(`http://localhost:2030/api/artisan/delete/${id}`, {
+    fetch(`https://backend-production-720a.up.railway.app/api/artisan/delete/${id}`, {
       method: 'DELETE',
     })
       .then((response) => response.text())
@@ -58,7 +58,7 @@ function AdminArtisanUsers() {
 
     const updatedData = { ...updatedArtisan, id: editingArtisan.id };
 
-    fetch(`http://localhost:2030/api/artisan/update/${editingArtisan.id}`, {
+    fetch(`https://backend-production-720a.up.railway.app/api/artisan/update/${editingArtisan.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
